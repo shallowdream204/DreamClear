@@ -238,7 +238,7 @@ if __name__ == '__main__':
         log_with=args.report_to,
         project_dir=os.path.join(config.work_dir, 'logs'),
         fsdp_plugin=fsdp_plugin,
-        even_batches=even_batches,
+        # even_batches=even_batches,
         kwargs_handlers=[init_handler]
     )
     logger = get_root_logger(os.path.join(config.work_dir, 'eval_dreamclear.log'))

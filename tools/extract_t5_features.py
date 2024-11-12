@@ -32,7 +32,8 @@ def extract_caption_t5_job(item):
             caption = [caption]
 
         # save_path = item.replace('.caption','')
-        save_path = os.path.join(args.save_npz_folder, os.path.basename(item).replace('.caption','.npz'))
+        # save_path = os.path.join(args.save_npz_folder, os.path.basename(item).replace('.caption','.npz'))
+        save_path = os.path.join(args.save_npz_folder, os.path.basename(item).replace('.txt','.npz'))
         if os.path.exists(f"{save_path}.npz"):
             return
         try:
@@ -51,7 +52,7 @@ def get_caption_files(folder_path):
     caption_files = []
     for root, dirs, files in os.walk(folder_path):
         for file in files:
-            if file.endswith('.caption'):
+            if file.endswith('.txt'):
                 caption_files.append(os.path.join(root, file))
     caption_files.sort()
     return caption_files
